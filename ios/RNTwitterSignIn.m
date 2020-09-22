@@ -36,7 +36,7 @@ RCT_EXPORT_METHOD(logIn: (RCTPromiseResolveBlock)resolve
 
             [client requestEmailForCurrentUser:^(NSString *email, NSError *error) {
                 NSString *requestedEmail = (email) ? email : @"";
-                NSString *name = json[@"name"] ?: @"";
+                NSString *name = (name) ? name : @"";
                 NSDictionary *body = @{@"authToken": session.authToken,
                                        @"authTokenSecret": session.authTokenSecret,
                                        @"userID":session.userID,
